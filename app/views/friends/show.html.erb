@@ -1,0 +1,21 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">
+   <%= @friend.first_name %> <%= @friend.last_name %>
+  </h1>
+  <p class="lead">
+    <div>
+    <%= @friend.email %> | <%= @friend.phone %> | <%= @friend.twitter %>
+    </div>
+
+    <div class="d-none">
+      <strong>User Id:</strong>
+      <%= @friend.user_id %>
+    </div>
+
+  </p>
+  <%= link_to "Edit", edit_friend_path(@friend), class:"btn btn-secondary" %>
+  <%= link_to "Back", friends_path, class:"btn btn-secondary btn-dark" %>
+  <%= link_to "Delete", @friend, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
+</div>
